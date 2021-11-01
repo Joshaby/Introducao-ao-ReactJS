@@ -30047,7 +30047,7 @@ var App1 = /*#__PURE__*/function (_Component) {
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Div__WEBPACK_IMPORTED_MODULE_3__["default"], {
         label: "Div 1"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.state.label), this.state.label === 'Labe2' && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Igual hehe"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.state.label), this.state.label === 'Label2' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "1") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: function onClick() {
           return _this3.alterarLabel();
         }
@@ -30066,19 +30066,40 @@ var sum = function sum(a, b) {
   return alert(a + b);
 };
 
+var customer = [{
+  id: 1,
+  name: 'José Henrique',
+  skills: ['Spring Boot', 'Hibernate', 'React']
+}, {
+  id: 2,
+  name: 'Henrique',
+  skills: ['Spring Boot', 'Hibernate', 'React']
+}, {
+  id: 3,
+  name: 'Azevedo',
+  skills: ['Spring Boot', 'Hibernate', 'React']
+}, {
+  id: 4,
+  name: 'Geovana',
+  skills: ['Spring Boot', 'Hibernate', 'React']
+}];
+
 var App = function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Div__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    label: "Div 1"
-  }, showName(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    onClick: function onClick() {
-      return sum(10, 10);
-    },
-    name: "Clique aqui!"
-  })));
+  var renderCustomers = function renderCustomers(customer, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      key: index
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Id: ", customer.id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Nome: ", customer.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Skills:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, customer.skills.map(function (skill, index) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        key: index
+      }, skill);
+    })));
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Clientes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, customer.map(renderCustomers)));
 };
 
 var rootElement = document.getElementById("root");
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App1, null), rootElement);
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, null), rootElement);
 
 /***/ })
 

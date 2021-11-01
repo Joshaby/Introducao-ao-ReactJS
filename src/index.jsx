@@ -77,11 +77,17 @@ const customer = [
 ]
 
 const App = () => {
+
+    const deleteCliente = (e, id) => {
+        console.log(e);
+        console.log("Deletando cliente com id " + id);
+    }
+
     const renderCustomers = (customer, index) => {
         return (
             <li key={index}>
                 <p>Id: {customer.id}</p>
-                <p>Nome: {customer.name}</p>
+                <p>Nome: {customer.name}<button onClick={e => deleteCliente(e, customer.id)}>Deletar</button></p>
                 <p>Skills:</p>
                 <ul>
                     {customer.skills.map((skill, index) => {

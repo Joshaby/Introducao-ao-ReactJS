@@ -31,6 +31,11 @@ class App1 extends Component {
         return (
             <Div label="Div 1">
                 <p>{this.state.label}</p>
+                {this.state.label === 'Label2' ? (
+                    <p>1</p>
+                ) : (
+                    <p>2</p>
+                )}
                 <button onClick={() => this.alterarLabel()}>Clique aqui</button>
             </Div>
         );

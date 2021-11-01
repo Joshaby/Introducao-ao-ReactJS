@@ -52,17 +52,57 @@ function showName() {
 
 const sum = (a, b) => alert(a + b);
 
+const customer = [
+    {
+        id: 1,
+        name: 'José Henrique',
+        skills: ['Spring Boot', 'Hibernate', 'React']
+    },
+    {
+        id: 2,
+        name: 'Henrique',
+        skills: ['Spring Boot', 'Hibernate', 'React']
+    },
+    {
+        id: 3,
+        name: 'Azevedo',
+        skills: ['Spring Boot', 'Hibernate', 'React']
+    }
+    ,
+    {
+        id: 4,
+        name: 'Geovana',
+        skills: ['Spring Boot', 'Hibernate', 'React']
+    }
+]
+
 const App = () => {
+    const renderCustomers = (customer, index) => {
+        return (
+            <li key={index}>
+                <p>Id: {customer.id}</p>
+                <p>Nome: {customer.name}</p>
+                <p>Skills:</p>
+                <ul>
+                    {customer.skills.map((skill, index) => {
+                        return (
+                            <li key={index}>{skill}</li>
+                        );
+                    })}
+                </ul>
+            </li>
+        );
+    }
 
     return (
         <div>
-            <Div label="Div 1">
-                {showName()}
-                <Button onClick={() => sum(10, 10)} name="Clique aqui!"/>
-            </Div>
+            <h1>Clientes</h1>
+            <ul>
+                {customer.map(renderCustomers)}
+            </ul>
         </div>
     );
 }
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App1 />, rootElement);
+ReactDOM.render(<App />, rootElement);

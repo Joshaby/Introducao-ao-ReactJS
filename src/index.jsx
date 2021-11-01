@@ -9,7 +9,7 @@ class App1 extends Component {
         super(props);
 
         this.state = {
-            label: 'Label'
+            label: 'Label302'
         }
     }
 
@@ -29,12 +29,10 @@ class App1 extends Component {
 
     render() {
         return (
-            <div>
-                <Div label="Div 1">
-                    <p>{this.state.label}</p>
-                    <button onClick={() => this.alterarLabel()}>Clique aqui</button>
-                </Div>
-            </div>
+            <Div label="Div 1">
+                <p>{this.state.label}</p>
+                <button onClick={() => this.alterarLabel()}>Clique aqui</button>
+            </Div>
         );
     }
 }
